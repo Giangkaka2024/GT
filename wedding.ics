@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Wedding Invitation//VN
+BEGIN:VEVENT
+UID:wedding-Giang-Trang-2026
+DTSTAMP:20261101T000000
+DTSTART:20261117T090000
+DTEND:20261117T140000
+SUMMARY:Đám cưới Hứa Giang & Đỗ Trang
+DESCRIPTION:Trân trọng kính mời bạn đến dự lễ cưới của chúng mình!
+LOCATION:Thôn Tam Liên (Tam Thành cũ), Xã Tam Giang, Tỉnh Đắk Lắk
+END:VEVENT
+END:VCALENDAR
