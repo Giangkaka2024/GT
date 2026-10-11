@@ -50,51 +50,51 @@ function toggleQR() {
 }
 
 // 3. Hàm gửi RSVP (Gợi ý dùng Google Forms để lưu lời chúc)
-function sendRSVP() {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzOfPcIjG7QkWuVEHLbKqeArVDG6Ei0D9g0EMyxZo5Ys0TvrdMYXYFNgmw5XM40VMV6/exec'; // Link vừa copy ở Bước 2
+// function sendRSVP() {
+//     const scriptURL = 'https://script.google.com/macros/s/AKfycbzOfPcIjG7QkWuVEHLbKqeArVDG6Ei0D9g0EMyxZo5Ys0TvrdMYXYFNgmw5XM40VMV6/exec'; // Link vừa copy ở Bước 2
 
-    const name = document.getElementById('input-name').value;
-    const attendance = document.getElementById('attendance').value;
-    const guest_count = document.getElementById('nguoi').value;
-    const message = document.getElementById('message').value;
+//     const name = document.getElementById('input-name').value;
+//     const attendance = document.getElementById('attendance').value;
+//     const guest_count = document.getElementById('nguoi').value;
+//     const message = document.getElementById('message').value;
 
-    if (!message.trim()) {
-        alert("Bạn hãy nhập lời chúc cho tụi mình nhé! ❤️");
-        return;
-    }
+//     if (!message.trim()) {
+//         alert("Bạn hãy nhập lời chúc cho tụi mình nhé! ❤️");
+//         return;
+//     }
 
-    const btn = document.querySelector("#rsvp-form .btn");
+//     const btn = document.querySelector("#rsvp-form .btn");
 
-    // Bước 1: Thay đổi giao diện nút ngay lập tức
-    btn.innerHTML = '<span class="loader"></span> Đang gửi...';
-    btn.style.opacity = "0.7";
-    btn.disabled = true;
+//     // Bước 1: Thay đổi giao diện nút ngay lập tức
+//     btn.innerHTML = '<span class="loader"></span> Đang gửi...';
+//     btn.style.opacity = "0.7";
+//     btn.disabled = true;
 
-    // Bước 2: Gửi dữ liệu đi
-    fetch(scriptURL, {
-        method: 'POST',
-        mode: 'no-cors', // Mẹo: Dùng no-cors để gửi nhanh hơn (nhưng sẽ không đọc được phản hồi JSON)
-        body: JSON.stringify({
-            "name": name,
-            "attendance": attendance,
-            "guest_count": guest_count,
-            "message": message
-        })
-    })
-        .then(() => {
-            // Bước 3: Thông báo thành công nhanh
-            alert('Cảm ơn ' + name + '! Lời chúc đã được gửi đi thành công. ❤️');
-            btn.innerHTML = "Xác nhận & Gửi lời chúc";
-            btn.style.opacity = "1";
-            btn.disabled = false;
-            document.getElementById('message').value = "";
-        })
-        .catch(error => {
-            console.error('Error!', error.message);
-            btn.innerHTML = "Thử lại";
-            btn.disabled = false;
-        });
-}
+//     // Bước 2: Gửi dữ liệu đi
+//     fetch(scriptURL, {
+//         method: 'POST',
+//         mode: 'no-cors', // Mẹo: Dùng no-cors để gửi nhanh hơn (nhưng sẽ không đọc được phản hồi JSON)
+//         body: JSON.stringify({
+//             "name": name,
+//             "attendance": attendance,
+//             "guest_count": guest_count,
+//             "message": message
+//         })
+//     })
+//         .then(() => {
+//             // Bước 3: Thông báo thành công nhanh
+//             alert('Cảm ơn ' + name + '! Lời chúc đã được gửi đi thành công. ❤️');
+//             btn.innerHTML = "Xác nhận & Gửi lời chúc";
+//             btn.style.opacity = "1";
+//             btn.disabled = false;
+//             document.getElementById('message').value = "";
+//         })
+//         .catch(error => {
+//             console.error('Error!', error.message);
+//             btn.innerHTML = "Thử lại";
+//             btn.disabled = false;
+//         });
+// }
 // Thiết lập ngày cưới
 const weddingDate = new Date(targetWeddingDate).getTime();
 
@@ -175,13 +175,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
         qrImg.addEventListener('click', toggleZoomQR);
     }
 });
-function sendRSVP() {
+function sendRSVP1() {
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzOfPcIjG7QkWuVEHLbKqeArVDG6Ei0D9g0EMyxZo5Ys0TvrdMYXYFNgmw5XM40VMV6/exec'; // Link vừa copy ở Bước 2
 
     const name = document.getElementById('input-name').value;
     const attendance = document.getElementById('attendance').value;
     const guest_count = document.getElementById('nguoi').value;
     const message = document.getElementById('message').value;
+
 
     if (!message.trim()) {
         alert("Bạn hãy nhập lời chúc cho tụi mình nhé! ❤️");
@@ -506,3 +507,49 @@ window.addEventListener('scroll', function () {
         }
     }
 }, { passive: true });
+function sendRSVP() {
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbytdc19q_wFHyCErG80MIe2wrY9CREYdnH5O-51aeZ06XjhWn4tuk0D6BGOhD2ByYIrWw/exec'; // Link vừa copy ở Bước 2
+
+    const name = document.getElementById('input-name').value;
+    const attendance = document.getElementById('attendance').value;
+    const guest_count = document.getElementById('nguoi').value;
+    const message = document.getElementById('message').value;
+
+
+    if (!message.trim()) {
+        alert("Bạn hãy nhập lời chúc cho tụi mình nhé! ❤️");
+        return;
+    }
+
+    const btn = document.querySelector("#rsvp-form .btn");
+
+    // Bước 1: Thay đổi giao diện nút ngay lập tức
+    btn.innerHTML = '<span class="loader"></span> Đang gửi...';
+    btn.style.opacity = "0.7";
+    btn.disabled = true;
+
+    // Bước 2: Gửi dữ liệu đi
+    fetch(scriptURL, {
+        method: 'POST',
+        mode: 'no-cors', // Mẹo: Dùng no-cors để gửi nhanh hơn (nhưng sẽ không đọc được phản hồi JSON)
+        body: JSON.stringify({
+            "name": name,
+            "attendance": attendance,
+            "guest_count": guest_count,
+            "message": message
+        })
+    })
+        .then(() => {
+            // Bước 3: Thông báo thành công nhanh
+            alert('Cảm ơn ' + name + '! Lời chúc đã được gửi đi thành công. ❤️');
+            btn.innerHTML = "Xác nhận & Gửi lời chúc";
+            btn.style.opacity = "1";
+            btn.disabled = false;
+            document.getElementById('message').value = "";
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            btn.innerHTML = "Thử lại";
+            btn.disabled = false;
+        });
+}
