@@ -176,7 +176,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
 });
 function sendRSVP() {
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbx_mSuonF61BfPbrbx6mhy7MoQcTnVt4e9ZXrayomOIA3A0LJ3UzDSyLjy4V9emGsuF/exec'; // Link vừa copy ở Bước 2
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzOfPcIjG7QkWuVEHLbKqeArVDG6Ei0D9g0EMyxZo5Ys0TvrdMYXYFNgmw5XM40VMV6/exec'; // Link vừa copy ở Bước 2
 
     const name = document.getElementById('input-name').value;
     const attendance = document.getElementById('attendance').value;
